@@ -1,2 +1,1 @@
-# terraform-template
-terraform-template
+# Terraform Boilerplate

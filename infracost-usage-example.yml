@@ -1,0 +1,2 @@
+  aws_secretsmanager_secret.my_secret:
+    monthly_requests: 1000000 # Monthly API requests to Secrets Manager.

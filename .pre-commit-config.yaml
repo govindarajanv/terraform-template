@@ -1,0 +1,31 @@
+repos:
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.77.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+  hooks:
+    - id: terraform_fmt
+#    - id: terraform_tflint
+#      args:
+#        - --args=--module
+#        - --args=--enable-rule=terraform_documented_variables
+#    - id: terraform_tfsec
+    - id: terraform_validate
+      args:
+        - --args=-json
+        - --args=-no-color
+#    - id: terrascan
+#      args:
+#        - --args=--non-recursive
+#    - id: infracost_breakdown
+    - id: terraform_docs
+      args:
+        - --hook-config=--path-to-file=DOCUMENTATION.md
+        - --hook-config=--add-to-existing-file=true
+        - --hook-config=--create-file-if-not-exist=true
+#    - id: terraform_docs
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.1.0
+  hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
