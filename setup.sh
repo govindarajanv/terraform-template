@@ -16,4 +16,4 @@ tar xvfz terraform-docs-v0.16.0-linux-amd64.tar.gz
 sudo chmod +x terraform-docs
 sudo mv terraform-docs /usr/local/bin
 
-wget https://github.com/aquasecurity/tfsec/releases/download/v1.28.1/tfsec-checkgen-linux-amd64 && sudo chmod +x tfsec-checkgen-linux-amd64 && sudo mv tfsec-checkgen-linux-amd64 /usr/local/bin/tfsec
+curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash

@@ -7,7 +7,7 @@ repos:
 #      args:
 #        - --args=--module
 #        - --args=--enable-rule=terraform_documented_variables
-#    - id: terraform_tfsec
+    - id: terraform_tfsec
     - id: terraform_validate
       args:
         - --args=-json
