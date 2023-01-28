@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 python3 -m install pip install pre-commit
 wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
@@ -17,3 +17,4 @@ sudo chmod +x terraform-docs
 sudo mv terraform-docs /usr/local/bin
 
 curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+pre-commit autoupdate

@@ -1,4 +1,19 @@
 repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-json
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+      - id: no-commit-to-branch # both main and master are protected by default
+      - id: detect-private-key
+      - id: detect-aws-credentials
+        args:
+        - --allow-missing-credentials
 - repo: https://github.com/antonbabenko/pre-commit-terraform
   rev: v1.77.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
   hooks:
@@ -16,16 +31,10 @@ repos:
 #      args:
 #        - --args=--non-recursive
 #    - id: infracost_breakdown
-    - id: terraform_docs
-      args:
-        - --hook-config=--path-to-file=DOCUMENTATION.md
-        - --hook-config=--add-to-existing-file=true
-        - --hook-config=--create-file-if-not-exist=true
-#    - id: terraform_docs
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.1.0
+
+- repo: https://github.com/terraform-docs/terraform-docs
+  rev: "v0.16.0"             # e.g. "v0.11.2"
   hooks:
-      - id: trailing-whitespace
-      - id: end-of-file-fixer
-      - id: check-yaml
-      - id: check-added-large-files
+  - id: terraform-docs-go
+    args: ["--output-file", "README.md", "./"]
+#    - id: terraform_docs
