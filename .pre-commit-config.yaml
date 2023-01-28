@@ -36,5 +36,5 @@ repos:
   rev: v1.47.0
   hooks:
       - id: terraform_docs
-        args: ["markdown", "table", "--output-file", "README.md", "./mymodule/path", "--config=.terraform-docs.yml"]
-        #- --args=--config=.terraform-docs.yml
+        args: #["markdown", "table", "--output-file", "README.md", "./mymodule/path", "--config=.terraform-docs.yml"]
+        - --args=--config=.terraform-docs.yml
