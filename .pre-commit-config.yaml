@@ -32,9 +32,9 @@ repos:
 #        - --args=--non-recursive
 #    - id: infracost_breakdown
 
-- repo: https://github.com/terraform-docs/terraform-docs
-  rev: "v0.16.0"             # e.g. "v0.11.2"
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.47.0
   hooks:
-  - id: terraform-docs-go
-    args: ["--output-file", "README.md", "./"]
-#    - id: terraform_docs
+      - id: terraform_docs
+        args: ["markdown", "table", "--output-file", "README.md", "./mymodule/path", "--config=.terraform-docs.yml"]
+        #- --args=--config=.terraform-docs.yml

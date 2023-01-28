@@ -2,6 +2,32 @@
 
 ## Introduction
 This is sample readme for terraform module
+
+ <!-- BEGIN_TF_DOCS -->
+   {{ .Content }}
+## Requirements
+
+No requirements.
+## Usage
+Basic usage of this module is as follows:
+```hcl
+module "example" {
+	 source  = "<module-path>"
+}
+```
+## Resources
+
+No resources.
+## Inputs
+
+No inputs.
+## Outputs
+
+No outputs.
+ <!-- END_TF_DOCS -->
+## Footer
+Contributor Names
+
 <!-- BEGIN_AUTOMATED_TF_DOCS_BLOCK -->
 ## Requirements
 
@@ -23,5 +49,3 @@ No inputs.
 
 No outputs.
 <!-- END_AUTOMATED_TF_DOCS_BLOCK -->
-## Footer
-Contributor Names
